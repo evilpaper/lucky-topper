@@ -1,0 +1,21 @@
+{
+  "name": "lucky-topper",
+  "version": "1.0.0",
+  "description": "A simple command to retrieve stock information.",
+  "main": "bin/index.js",
+  "bin": "bin/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "stock"
+  ],
+  "author": "Pelle Lundgren",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "typescript": "^5.1.6"
+  }
+}

@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 // Line above specifies that the file must be executed by npx and ts-node
 
-console.log("You got lucky!");
-
 import https, { RequestOptions } from "https";
 
 const random = Math.floor(Math.random() * 100);
@@ -37,8 +35,14 @@ function getData(): Promise<string> {
 getData()
   .then((data) => {
     const result = JSON.parse(data);
-    const { title } = result;
-    console.log(title);
+    const { title, artistDisplayName, objectID, repository, creditLine } =
+      result;
+    const by = artistDisplayName
+      ? `${artistDisplayName} `
+      : `unknown artist (exciting, isn't it)`;
+    console.log(
+      `In this case we recommend ${title} by ${by} with object ID ${objectID} at ${repository}. ${creditLine}`
+    );
   })
   .catch((error) => {
     console.log(error);
